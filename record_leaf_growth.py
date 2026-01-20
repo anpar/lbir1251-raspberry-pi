@@ -15,7 +15,7 @@ pot6 = Encoder.Encoder(18, 24)
 
 pots = [pot1, pot2, pot3, pot4, pot5, pot6]
 
-fname = 'data/data.csv'
+fname = 'data/data-{year}.csv'.format(year=datetime.now().strftime("%Y"))
 
 if not os.path.isfile(fname):
     print("Output file does not exists.")
@@ -28,7 +28,7 @@ if not os.path.isfile(fname):
         writer.writerow(['time', 'pot_1', 'pot_2', 'pot_3', 'pot_4', 'pot_5', 'pot_6'])
 else:
     print("Output file already exists.")
-    print("I will append data.")
+    print("I will append data to the existing file.")
     
 # Open in append mode, allows to re-start the script without destroying
 # the data if needed (e.g., if something goes wrong in the middle of the
