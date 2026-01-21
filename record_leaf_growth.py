@@ -30,17 +30,17 @@ else:
     print("Output file already exists.")
     print("I will append data to the existing file.")
     
-# Open in append mode, allows to re-start the script without destroying
-# the data if needed (e.g., if something goes wrong in the middle of the
-# experiment)
-with open(fname, 'a', newline='') as csvfile:
-    writer = csv.writer(csvfile, delimiter=';')
-    
-    while True:
+while True:
+    # Open in append mode, allows to re-start the script without destroying
+    # the data if needed (e.g., if something goes wrong in the middle of the
+    # experiment)
+    with open(fname, 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile, delimiter=';')
         row = [datetime.now().strftime("%d-%m-%Y %H:%M:%S")] \
             + [pot.read() for pot in pots]     
-        
+    
         print("Writing row: " + str(row))
-        
+    
         writer.writerow(row)
-        time.sleep(60)
+    
+    time.sleep(60)
