@@ -14,14 +14,14 @@ import Encoder
 # sur le raspberry, parce que ces numéros diffèrent des numéros physiques des
 # pins sur la board). Les deux GPIO indiqués ici correspondent à ceux liés
 # aux pins CLK et DT sur l'encodeur rotatif.
-pot1 = Encoder.Encoder(6, 13)   # e.g., GPIO 6 et GPIO 13
-pot2 = Encoder.Encoder(16, 19)
-pot3 = Encoder.Encoder(11, 9)
-pot4 = Encoder.Encoder(25, 8)
-pot5 = Encoder.Encoder(27, 22)
-pot6 = Encoder.Encoder(18, 24)
+enc1 = Encoder.Encoder(6, 13)   # e.g., GPIO 6 et GPIO 13
+enc2 = Encoder.Encoder(16, 19)
+enc3 = Encoder.Encoder(11, 9)
+enc4 = Encoder.Encoder(25, 8)
+enc5 = Encoder.Encoder(27, 22)
+enc6 = Encoder.Encoder(18, 24)
 
-pots = [pot1, pot2, pot3, pot4, pot5, pot6]
+pots = [enc1, enc2, enc3, enc4, enc5, enc6]
 
 # Les GPIOs ci-dessous correpondent à ceux qui ne sont pas utilisés pour la
 # lecture des encodeurs. 2 parmi les 3 pour chaque paire d'encodeurs servent
@@ -46,7 +46,7 @@ if not os.path.isfile(fname):
         writer = csv.writer(csvfile, delimiter=';')
         
         # Write header
-        writer.writerow(['time', 'pot_1', 'pot_2', 'pot_3', 'pot_4', 'pot_5', 'pot_6'])
+        writer.writerow(['time', 'enc_1', 'enc_2', 'enc_3', 'enc_4', 'enc_5', 'enc_6'])
 else:
     print("Output file already exists.")
     print("I will append data to the existing file.")
