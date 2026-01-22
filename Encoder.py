@@ -2,6 +2,8 @@
 Encoder library for Raspberry Pi for measuring quadrature encoded signals.
 created by Mivallion <mivallion@gmail.com>
 Version 1.0 - 01 april 2020 - inital release
+github : https://github.com/mivallion/Encoder
+pypi.org https://pypi.org/project/Encoder/
 """
 
 import RPi.GPIO as GPIO
